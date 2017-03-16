@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B6127271E7AE78A00A10903 /* PhotographView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B6127261E7AE78A00A10903 /* PhotographView.xib */; };
+		7B6127291E7AE7B000A10903 /* PhotographView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6127281E7AE7B000A10903 /* PhotographView.swift */; };
 		7BA0283E1E7A230900DFC2B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0283D1E7A230900DFC2B7 /* AppDelegate.swift */; };
 		7BA028401E7A230900DFC2B7 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0283F1E7A230900DFC2B7 /* PlayerViewController.swift */; };
 		7BA028431E7A230900DFC2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA028411E7A230900DFC2B7 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B6127261E7AE78A00A10903 /* PhotographView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotographView.xib; sourceTree = "<group>"; };
+		7B6127281E7AE7B000A10903 /* PhotographView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotographView.swift; sourceTree = "<group>"; };
 		7BA0283A1E7A230900DFC2B7 /* VideoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA0283D1E7A230900DFC2B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA0283F1E7A230900DFC2B7 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 			children = (
 				7BA0283D1E7A230900DFC2B7 /* AppDelegate.swift */,
 				7BA0286F1E7A2CC600DFC2B7 /* PhotographViewController.swift */,
+				7B6127281E7AE7B000A10903 /* PhotographView.swift */,
+				7B6127261E7AE78A00A10903 /* PhotographView.xib */,
 				7BA0283F1E7A230900DFC2B7 /* PlayerViewController.swift */,
 				7BA028411E7A230900DFC2B7 /* Main.storyboard */,
 				7BA028441E7A230900DFC2B7 /* Assets.xcassets */,
@@ -252,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BA0286E1E7A2B6600DFC2B7 /* test.mov in Resources */,
+				7B6127271E7AE78A00A10903 /* PhotographView.xib in Resources */,
 				7BA028481E7A230900DFC2B7 /* LaunchScreen.storyboard in Resources */,
 				7BA028451E7A230900DFC2B7 /* Assets.xcassets in Resources */,
 				7BA028431E7A230900DFC2B7 /* Main.storyboard in Resources */,
@@ -281,6 +288,7 @@
 			files = (
 				7BA028401E7A230900DFC2B7 /* PlayerViewController.swift in Sources */,
 				7BA0283E1E7A230900DFC2B7 /* AppDelegate.swift in Sources */,
+				7B6127291E7AE7B000A10903 /* PhotographView.swift in Sources */,
 				7BA028701E7A2CC600DFC2B7 /* PhotographViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +540,7 @@
 				7BA028641E7A230900DFC2B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BA028651E7A230900DFC2B7 /* Build configuration list for PBXNativeTarget "VideoDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +549,7 @@
 				7BA028671E7A230900DFC2B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BA028681E7A230900DFC2B7 /* Build configuration list for PBXNativeTarget "VideoDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +558,7 @@
 				7BA0286A1E7A230900DFC2B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
