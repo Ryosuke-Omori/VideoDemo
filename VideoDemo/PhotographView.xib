@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +15,65 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PhotographView" customModule="VideoDemo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sds-ls-d9j" userLabel="PreviewView">
+                    <rect key="frame" x="0.0" y="-0.5" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-N9-aY6" userLabel="FooterVIew">
+                    <rect key="frame" x="0.0" y="600" width="375" height="66.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7t5-sR-xRz" userLabel="RecordButton">
+                    <rect key="frame" x="19" y="600" width="112.5" height="66.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                    <state key="normal" title="RECORD">
+                        <color key="titleColor" red="0.80882465160000006" green="0.89339496409999997" blue="0.14972866939999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ow-Ue-QA6" userLabel="PlayButton">
+                    <rect key="frame" x="131.5" y="600" width="112.5" height="66.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                    <state key="normal" title="PLAY">
+                        <color key="titleColor" red="1" green="0.15808429212562158" blue="0.13612795409559841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNb-cl-FB7" userLabel="UploadButton">
+                    <rect key="frame" x="244" y="600" width="112.5" height="66.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                    <state key="normal" title="UPLOAD">
+                        <color key="titleColor" red="0.1427283808" green="1" blue="0.18803147049999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7t5-sR-xRz" firstAttribute="top" secondItem="8Ow-Ue-QA6" secondAttribute="top" id="34o-WL-ddL"/>
+                <constraint firstItem="Sds-ls-d9j" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="5W2-gQ-o16"/>
+                <constraint firstItem="LfR-N9-aY6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="98K-t4-NFW"/>
+                <constraint firstItem="GNb-cl-FB7" firstAttribute="height" secondItem="8Ow-Ue-QA6" secondAttribute="height" id="DvJ-wF-ewF"/>
+                <constraint firstItem="7t5-sR-xRz" firstAttribute="trailing" secondItem="8Ow-Ue-QA6" secondAttribute="leading" id="FP7-Dx-7nq"/>
+                <constraint firstItem="8Ow-Ue-QA6" firstAttribute="height" secondItem="LfR-N9-aY6" secondAttribute="height" id="QA7-Nc-aCV"/>
+                <constraint firstItem="LfR-N9-aY6" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="QId-gW-pmT"/>
+                <constraint firstItem="7t5-sR-xRz" firstAttribute="height" secondItem="8Ow-Ue-QA6" secondAttribute="height" id="QMg-rk-9f5"/>
+                <constraint firstItem="Sds-ls-d9j" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QeU-eM-0oy"/>
+                <constraint firstItem="8Ow-Ue-QA6" firstAttribute="centerY" secondItem="LfR-N9-aY6" secondAttribute="centerY" id="Syv-4z-6U1"/>
+                <constraint firstItem="GNb-cl-FB7" firstAttribute="leading" secondItem="8Ow-Ue-QA6" secondAttribute="trailing" id="T8g-Rz-vgw"/>
+                <constraint firstItem="8Ow-Ue-QA6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="T92-qQ-FRd"/>
+                <constraint firstItem="8Ow-Ue-QA6" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.3" id="WSc-ZM-vLk"/>
+                <constraint firstItem="Sds-ls-d9j" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCj-HA-Sia"/>
+                <constraint firstItem="7t5-sR-xRz" firstAttribute="width" secondItem="8Ow-Ue-QA6" secondAttribute="width" id="dOV-Zw-vZo"/>
+                <constraint firstItem="LfR-N9-aY6" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="ddh-hz-CBn"/>
+                <constraint firstItem="GNb-cl-FB7" firstAttribute="width" secondItem="8Ow-Ue-QA6" secondAttribute="width" id="eTw-Pl-uDB"/>
+                <constraint firstItem="LfR-N9-aY6" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="ldt-4k-ouD"/>
+                <constraint firstItem="GNb-cl-FB7" firstAttribute="top" secondItem="8Ow-Ue-QA6" secondAttribute="top" id="pRx-WU-rtP"/>
+                <constraint firstItem="Sds-ls-d9j" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="slH-HG-F6v"/>
+            </constraints>
+            <connections>
+                <outlet property="playButton" destination="8Ow-Ue-QA6" id="5fM-9w-Uzc"/>
+                <outlet property="recordButton" destination="7t5-sR-xRz" id="6if-F6-XpZ"/>
+                <outlet property="uploadButton" destination="GNb-cl-FB7" id="oRU-2a-lws"/>
+            </connections>
         </view>
     </objects>
 </document>

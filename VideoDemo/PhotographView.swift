@@ -11,4 +11,9 @@ import UIKit
 
 public class PhotographView : UIView {
     
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var uploadButton: UIButton!
+    
+    
 }
