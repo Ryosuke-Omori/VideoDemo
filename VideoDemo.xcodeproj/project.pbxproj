@@ -14,6 +14,7 @@
 		7BA028481E7A230900DFC2B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA028461E7A230900DFC2B7 /* LaunchScreen.storyboard */; };
 		7BA028531E7A230900DFC2B7 /* VideoDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA028521E7A230900DFC2B7 /* VideoDemoTests.swift */; };
 		7BA0285E1E7A230900DFC2B7 /* VideoDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0285D1E7A230900DFC2B7 /* VideoDemoUITests.swift */; };
+		7BA0286E1E7A2B6600DFC2B7 /* test.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7BA0286D1E7A2B6600DFC2B7 /* test.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		7BA028591E7A230900DFC2B7 /* VideoDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA0285D1E7A230900DFC2B7 /* VideoDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDemoUITests.swift; sourceTree = "<group>"; };
 		7BA0285F1E7A230900DFC2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BA0286D1E7A2B6600DFC2B7 /* test.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = test.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				7BA028441E7A230900DFC2B7 /* Assets.xcassets */,
 				7BA028461E7A230900DFC2B7 /* LaunchScreen.storyboard */,
 				7BA028491E7A230900DFC2B7 /* Info.plist */,
+				7BA0286D1E7A2B6600DFC2B7 /* test.mov */,
 			);
 			path = VideoDemo;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BA0286E1E7A2B6600DFC2B7 /* test.mov in Resources */,
 				7BA028481E7A230900DFC2B7 /* LaunchScreen.storyboard in Resources */,
 				7BA028451E7A230900DFC2B7 /* Assets.xcassets in Resources */,
 				7BA028431E7A230900DFC2B7 /* Main.storyboard in Resources */,
