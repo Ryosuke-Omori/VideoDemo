@@ -10,7 +10,6 @@
 		7B6127271E7AE78A00A10903 /* PhotographView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B6127261E7AE78A00A10903 /* PhotographView.xib */; };
 		7B6127291E7AE7B000A10903 /* PhotographView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6127281E7AE7B000A10903 /* PhotographView.swift */; };
 		7B61272B1E7B252D00A10903 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61272A1E7B252D00A10903 /* Picker.swift */; };
-		7B61272D1E7B28D000A10903 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B61272C1E7B28D000A10903 /* PlayerView.xib */; };
 		7B61272F1E7B28E100A10903 /* PlalyerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61272E1E7B28E100A10903 /* PlalyerView.swift */; };
 		7BA0283E1E7A230900DFC2B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0283D1E7A230900DFC2B7 /* AppDelegate.swift */; };
 		7BA028401E7A230900DFC2B7 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0283F1E7A230900DFC2B7 /* PlayerViewController.swift */; };
@@ -45,7 +44,6 @@
 		7B6127261E7AE78A00A10903 /* PhotographView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotographView.xib; sourceTree = "<group>"; };
 		7B6127281E7AE7B000A10903 /* PhotographView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotographView.swift; sourceTree = "<group>"; };
 		7B61272A1E7B252D00A10903 /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
-		7B61272C1E7B28D000A10903 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		7B61272E1E7B28E100A10903 /* PlalyerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlalyerView.swift; sourceTree = "<group>"; };
 		7BA0283A1E7A230900DFC2B7 /* VideoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA0283D1E7A230900DFC2B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				7B6127281E7AE7B000A10903 /* PhotographView.swift */,
 				7B6127261E7AE78A00A10903 /* PhotographView.xib */,
 				7B61272E1E7B28E100A10903 /* PlalyerView.swift */,
-				7B61272C1E7B28D000A10903 /* PlayerView.xib */,
 				7BA0283F1E7A230900DFC2B7 /* PlayerViewController.swift */,
 				7BA028411E7A230900DFC2B7 /* Main.storyboard */,
 				7BA028441E7A230900DFC2B7 /* Assets.xcassets */,
@@ -271,7 +268,6 @@
 				7BA028481E7A230900DFC2B7 /* LaunchScreen.storyboard in Resources */,
 				7BA028451E7A230900DFC2B7 /* Assets.xcassets in Resources */,
 				7BA028431E7A230900DFC2B7 /* Main.storyboard in Resources */,
-				7B61272D1E7B28D000A10903 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

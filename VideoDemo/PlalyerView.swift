@@ -27,31 +27,28 @@ class AVPlayerView : UIView {
 
 public class PlayerView : UIView {
     
-    @IBOutlet weak var startButton: UIButton!
+    let BG_COLOR : UIColor = UIColor.black
     
     var playerURL : URL!
-    
     var playerItem : AVPlayerItem!
-    
     var videoPlayer : AVPlayer!
+    
+    var footerView : UIView!
+    var startButton : UIButton!
+    
+    var isPlaying : Bool = false
     
     public init(url: URL, frame: CGRect) {
         super.init(frame: frame)
         self.playerURL = url
-        self.loadNib()
+        
+        self.backgroundColor = self.BG_COLOR
         
         self.avInitialization()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.loadNib()
-    }
-    
-    private func loadNib() {
-        let view = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as! UIView
-        view.frame = self.bounds
-        self.addSubview(view)
     }
     
     private func avInitialization() {
@@ -63,9 +60,33 @@ public class PlayerView : UIView {
         let layer = videoPlayerView.layer as! AVPlayerLayer
         layer.videoGravity = AVLayerVideoGravityResizeAspect
         layer.player = self.videoPlayer
-        self.layer.insertSublayer(layer, above: self.startButton.layer)
+        self.layer.addSublayer(layer)
         
-//        self.layer.insertSublayer(self.startButton.layer, at: 1)
+        self.footerInitialization()
+    }
+    
+    private func footerInitialization() {
+        self.footerView = UIView(frame: CGRect(x: 0, y: self.bounds.height*(4/5), width: self.bounds.width, height: self.bounds.height/5))
+        self.footerView.backgroundColor = self.BG_COLOR
+        self.footerView.alpha = 0.70
+        self.addSubview(footerView)
+        
+        self.startButton = UIButton(frame: CGRect(x: self.bounds.width*0.3, y: 0, width: self.bounds.width*0.4, height: self.footerView.frame.height))
+        self.startButton.setTitle("PLAY", for: .normal)
+        self.startButton.setTitleColor(UIColor.green, for: .normal)
+        self.startButton.addTarget(self, action: #selector(PlayerView.onClickStartBtn), for: .touchUpInside)
+        self.footerView.addSubview(self.startButton)
+    }
+    
+    internal func onClickStartBtn() {
+        if self.isPlaying {         // 一時停止
+            self.videoPlayer.pause()
+        } else {                    // 開始
+            self.videoPlayer.play()
+        }
+        self.isPlaying = !(self.isPlaying)
+        self.startButton.setTitle(!(self.isPlaying) ? "PLAY" : "PAUSE", for: .normal)
+        self.startButton.alpha = !(self.isPlaying) ? 0.7 : 0.3
     }
     
 }
