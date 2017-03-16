@@ -89,8 +89,8 @@ class PhotographViewController: UIViewController, AVCaptureFileOutputRecordingDe
         myButtonStart.layer.position = CGPoint(x: self.view.bounds.width/2 - 70, y:self.view.bounds.height-50)
         myButtonStop.layer.position = CGPoint(x: self.view.bounds.width/2 + 70, y:self.view.bounds.height-50)
         
-        myButtonStart.addTarget(self, action: #selector(ViewController.onClickMyButton), for: .touchUpInside)
-        myButtonStop.addTarget(self, action: #selector(ViewController.onClickMyButton), for: .touchUpInside)
+        myButtonStart.addTarget(self, action: #selector(PhotographViewController.onClickMyButton), for: .touchUpInside)
+        myButtonStop.addTarget(self, action: #selector(PhotographViewController.onClickMyButton), for: .touchUpInside)
         
         // UIボタンをViewに追加.
         self.view.addSubview(myButtonStart);
@@ -135,5 +135,9 @@ class PhotographViewController: UIViewController, AVCaptureFileOutputRecordingDe
         
         //動画のパスから動画をフォトライブラリに保存する.
         assetsLib.writeVideoAtPath(toSavedPhotosAlbum: outputFileURL, completionBlock: nil)
+    }
+    
+    func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
+        <#code#>
     }
 }
