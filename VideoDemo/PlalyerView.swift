@@ -66,19 +66,28 @@ public class PlayerView : UIView {
     }
     
     private func footerInitialization() {
+        // footerView生成
         self.footerView = UIView(frame: CGRect(x: 0, y: self.bounds.height*(4/5), width: self.bounds.width, height: self.bounds.height/5))
         self.footerView.backgroundColor = self.BG_COLOR
         self.footerView.alpha = 0.70
         self.addSubview(footerView)
         
+        // startButton生成
         self.startButton = UIButton(frame: CGRect(x: self.bounds.width*0.3, y: 0, width: self.bounds.width*0.4, height: self.footerView.frame.height))
         self.startButton.setTitle("PLAY", for: .normal)
         self.startButton.setTitleColor(UIColor.green, for: .normal)
-        self.startButton.addTarget(self, action: #selector(PlayerView.onClickStartBtn), for: .touchUpInside)
+        self.startButton.addTarget(self, action: #selector(PlayerView.switchBtnMode), for: .touchUpInside)
         self.footerView.addSubview(self.startButton)
+        
+        // 動画完了イベント取得
+        let center = NotificationCenter.default
+        center.addObserver(self,
+                           selector: #selector(PlayerView.onMovieEnd),
+                           name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                           object: nil)
     }
     
-    internal func onClickStartBtn() {
+    internal func switchBtnMode() {
         if self.isPlaying {         // 一時停止
             self.videoPlayer.pause()
         } else {                    // 開始
@@ -87,6 +96,11 @@ public class PlayerView : UIView {
         self.isPlaying = !(self.isPlaying)
         self.startButton.setTitle(!(self.isPlaying) ? "PLAY" : "PAUSE", for: .normal)
         self.startButton.alpha = !(self.isPlaying) ? 0.7 : 0.3
+    }
+    
+    internal func onMovieEnd() {
+        self.switchBtnMode()
+        self.videoPlayer.seek(to: CMTimeMakeWithSeconds(0, Int32(NSEC_PER_SEC)))
     }
     
 }
