@@ -43,9 +43,12 @@ public class PhotographView : UIView, AVCaptureFileOutputRecordingDelegate {
         // セッション
         let captureSession = AVCaptureSession()
         
-        // 入力（背面カメラ）
-//        let videoDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-        let videoDevice = AVCaptureDevice.defaultDevice(withDeviceType: AVCaptureDeviceType.builtInDualCamera, mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
+        // 入力（前面カメラ）
+        guard let videoDevice = AVCaptureDevice.defaultDevice(
+            withDeviceType: .builtInWideAngleCamera,
+            mediaType: AVMediaTypeVideo,
+            position: .front)
+            else { fatalError("no front camera. but don't all iOS 10 devices have them?")}
         let videoInput = try! AVCaptureDeviceInput.init(device: videoDevice)
         captureSession.addInput(videoInput)
         // 入力（マイク）
