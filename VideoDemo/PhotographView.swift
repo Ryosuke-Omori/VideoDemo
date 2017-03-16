@@ -14,8 +14,6 @@ public class PhotographView : UIView, AVCaptureFileOutputRecordingDelegate {
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var uploadButton: UIButton!
     
     var isRecording : Bool = false
     
@@ -70,8 +68,6 @@ public class PhotographView : UIView, AVCaptureFileOutputRecordingDelegate {
         DispatchQueue.global(qos: .userInitiated).async {
             captureSession.startRunning()
         }
-        
-        
     }
     
     @IBAction func onClickRecordBtn(_ sender: Any) {
