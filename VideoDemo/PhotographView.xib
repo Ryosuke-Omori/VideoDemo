@@ -10,9 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotographView" customModule="VideoDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="playButton" destination="8Ow-Ue-QA6" id="Bfo-v9-J7Q"/>
+                <outlet property="previewView" destination="Sds-ls-d9j" id="yNx-WP-ho4"/>
+                <outlet property="recordButton" destination="7t5-sR-xRz" id="Dhv-Nz-O7N"/>
+                <outlet property="uploadButton" destination="GNb-cl-FB7" id="qEo-mP-1Mk"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PhotographView" customModule="VideoDemo" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -30,6 +37,9 @@
                     <state key="normal" title="RECORD">
                         <color key="titleColor" red="0.80882465160000006" green="0.89339496409999997" blue="0.14972866939999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="onClickRecordBtn:" destination="-1" eventType="touchUpInside" id="ZAt-qX-soX"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ow-Ue-QA6" userLabel="PlayButton">
                     <rect key="frame" x="131.5" y="600" width="112.5" height="66.5"/>
@@ -69,11 +79,6 @@
                 <constraint firstItem="GNb-cl-FB7" firstAttribute="top" secondItem="8Ow-Ue-QA6" secondAttribute="top" id="pRx-WU-rtP"/>
                 <constraint firstItem="Sds-ls-d9j" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="slH-HG-F6v"/>
             </constraints>
-            <connections>
-                <outlet property="playButton" destination="8Ow-Ue-QA6" id="5fM-9w-Uzc"/>
-                <outlet property="recordButton" destination="7t5-sR-xRz" id="6if-F6-XpZ"/>
-                <outlet property="uploadButton" destination="GNb-cl-FB7" id="oRU-2a-lws"/>
-            </connections>
         </view>
     </objects>
 </document>
