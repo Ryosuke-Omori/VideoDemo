@@ -36,7 +36,7 @@ class PhotographViewController: UIViewController, AVCaptureFileOutputRecordingDe
         
         // バックライトをmyDeviceに格納.
         for device in devices! {
-            if(device.position == AVCaptureDevicePosition.back){
+            if((device as AnyObject).position == AVCaptureDevicePosition.back){
                 myDevice = device as? AVCaptureDevice
             }
         }
