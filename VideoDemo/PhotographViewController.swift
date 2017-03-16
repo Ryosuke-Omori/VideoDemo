@@ -113,7 +113,7 @@ class PhotographViewController: UIViewController, AVCaptureFileOutputRecordingDe
             let filePath = "\(documentsDirectory)/test.mp4"
             
             // URL.
-            let fileURL = URL(fileURLWithPath: filePath!)
+            let fileURL = URL(fileURLWithPath: filePath)
             
             // 録画開始.
             myVideoOutput.startRecording(toOutputFileURL: fileURL, recordingDelegate: self)
