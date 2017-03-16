@@ -21,7 +21,7 @@ class AVPlayerView: UIView {
 }
 
 
-class ViewController: UIViewController {
+class PlayerViewController: UIViewController {
     
     // 再生用のアイテム.
     var playerItem : AVPlayerItem!
