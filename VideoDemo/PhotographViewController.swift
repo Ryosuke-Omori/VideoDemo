@@ -129,7 +129,7 @@ class PhotographViewController: UIViewController, AVCaptureFileOutputRecordingDe
     /*
      動画のキャプチャーが終わった時に呼ばれるメソッド.
      */
-    func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [AnyObject]!, error: Error!) {
+    func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         //AssetsLibraryを生成する.
         let assetsLib = ALAssetsLibrary()
         
@@ -137,7 +137,4 @@ class PhotographViewController: UIViewController, AVCaptureFileOutputRecordingDe
         assetsLib.writeVideoAtPath(toSavedPhotosAlbum: outputFileURL, completionBlock: nil)
     }
     
-    func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
-        <#code#>
-    }
 }
