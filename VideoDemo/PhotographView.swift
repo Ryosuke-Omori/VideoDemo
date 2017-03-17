@@ -69,6 +69,7 @@ public class PhotographView : UIView, AVCaptureFileOutputRecordingDelegate {
         captureSession.addOutput(fileOutput)
         
         // プレビュー
+        self.previewView.bounds = self.bounds
         if let videoLayer = AVCaptureVideoPreviewLayer.init(session: captureSession) {
             videoLayer.frame = self.previewView.bounds
             videoLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
