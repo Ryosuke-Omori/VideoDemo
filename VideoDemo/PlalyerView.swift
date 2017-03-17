@@ -10,34 +10,48 @@ import UIKit
 import AVFoundation
 import CoreMedia
 
+
+/// LayerをAVPlayerLayerに変換するためのラッパークラス
 class AVPlayerView : UIView {
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
     override class var layerClass : AnyClass {
         return AVPlayerLayer.self
     }
 }
 
+
+/// 渡された動画データPathを元に動画の再生をするUIViewクラス
 public class PlayerView : UIView {
     
+    /// バックグラウンドカラー
     let BG_COLOR : UIColor = UIColor.black
     
+    /// 呼び出し元から渡される動画データPath
     var playerURL : URL!
-    var playerItem : AVPlayerItem!
+    /// 動画の状態を管理するオブジェクト
     var videoPlayer : AVPlayer!
     
+    /// 操作ボタン群のラッパービュー
     var footerView : UIView!
+    /// 再生、停止ボタン
     var startButton : UIButton!
+    /// リセットボタン
+    var resetButton : UIButton!
     
+    /// 再生中かどうかの真偽値
     var isPlaying : Bool = false
     
+    /// コンストラクタ
+    ///
+    /// - Parameters:
+    ///   - url: 再生したい動画データPath(URL)
+    ///   - frame: 位置、サイズ(CGRect)
     public init(url: URL, frame: CGRect) {
         super.init(frame: frame)
         self.playerURL = url
@@ -51,10 +65,11 @@ public class PlayerView : UIView {
         super.init(coder: aDecoder)
     }
     
+    /// 動画機能の初期設定
     private func avInitialization() {
         let avAsset = AVURLAsset(url: self.playerURL)
-        self.playerItem = AVPlayerItem(asset: avAsset)
-        self.videoPlayer = AVPlayer(playerItem: self.playerItem)
+        let playerItem = AVPlayerItem(asset: avAsset)
+        self.videoPlayer = AVPlayer(playerItem: playerItem)
         
         let videoPlayerView = AVPlayerView(frame: self.bounds)
         let layer = videoPlayerView.layer as! AVPlayerLayer
@@ -65,6 +80,7 @@ public class PlayerView : UIView {
         self.footerInitialization()
     }
     
+    /// フッタービュー、ボタン群の初期設定
     private func footerInitialization() {
         // footerView生成
         self.footerView = UIView(frame: CGRect(x: 0, y: self.bounds.height*(4/5), width: self.bounds.width, height: self.bounds.height/5))
@@ -85,8 +101,16 @@ public class PlayerView : UIView {
                            selector: #selector(PlayerView.onMovieEnd),
                            name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                            object: nil)
+        
+        // resetButton生成
+        self.resetButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.bounds.width*0.3, height: self.footerView.frame.height))
+        self.resetButton.setTitle("RESET", for: .normal)
+        self.resetButton.setTitleColor(UIColor.red, for: .normal)
+        self.resetButton.addTarget(self, action: #selector(PlayerView.onMovieEnd), for: .touchUpInside)
+        self.footerView.addSubview(self.resetButton)
     }
     
+    /// startButton押下時イベント
     internal func switchBtnMode() {
         if self.isPlaying {         // 一時停止
             self.videoPlayer.pause()
@@ -98,6 +122,7 @@ public class PlayerView : UIView {
         self.startButton.alpha = !(self.isPlaying) ? 0.7 : 0.3
     }
     
+    /// 動画完了時イベント
     internal func onMovieEnd() {
         self.switchBtnMode()
         self.videoPlayer.seek(to: CMTimeMakeWithSeconds(0, Int32(NSEC_PER_SEC)))
