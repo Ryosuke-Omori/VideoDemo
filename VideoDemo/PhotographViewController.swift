@@ -49,10 +49,11 @@ class PhotographViewController : UIViewController, UINavigationControllerDelegat
     /// - Parameter sender: (UIButton)
     @IBAction func onClickRecBtn(_ sender: Any) {
         // AVViewをクリア
-        self.clearAvVIew()
+        self.clearAvView()
         
         // PhotographView生成
         self.photographView = PhotographView(frame: self.AV_MONITOR_SIZE)
+        self.photographView?.previewView.layer.position.y = 0
         self.view.addSubview(self.photographView!)
     }
     
@@ -65,7 +66,7 @@ class PhotographViewController : UIViewController, UINavigationControllerDelegat
     }
     
     /// PhotographViewとPlayerViewのクリア
-    private func clearAvVIew() {
+    private func clearAvView() {
         // PlayerViewがあったら削除
         self.playerView?.removeFromSuperview()
         self.playerView = nil
@@ -82,7 +83,7 @@ class PhotographViewController : UIViewController, UINavigationControllerDelegat
         let pickedURL : URL = info[UIImagePickerControllerReferenceURL] as! URL
         
         // AVViewをクリア
-        self.clearAvVIew()
+        self.clearAvView()
         
         // PlayerView生成
         self.playerView = PlayerView(url: pickedURL, frame: self.AV_MONITOR_SIZE)
