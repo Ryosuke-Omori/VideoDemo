@@ -73,7 +73,7 @@ public class PlayerView : UIView {
         
         let videoPlayerView = AVPlayerView(frame: self.bounds)
         let layer = videoPlayerView.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResizeAspect
+        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
         layer.player = self.videoPlayer
         self.layer.addSublayer(layer)
         
